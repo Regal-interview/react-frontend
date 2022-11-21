@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- © 2022 Regal. All rights reserved. -->
+<!-- prettier-ignore -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Call me 🤙</title>
+  <meta name="description" content="Interview © 2022 Regal. All rights reserved.">
+
+  <link href="/a/init.css" rel="stylesheet">
+  <script src="/a/init.js" type="module" async fetchpriorty="high"></script>
+  <link href="/css/tooltips.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="Nav">
+    <a class="Nav-logo"><svg><use xlink:href="#LOGO"></use></svg></a>
+    <a class="Nav-agent" href="#a" aria-selected><svg><use xlink:href="#AGENT"></use></svg><tool-tip tip-position="right">Agent Dashboard</tool-tip></a>
+    <a class="Nav-tasks" href="#t"><svg><use xlink:href="#TASKS"></use></svg><tool-tip tip-position="right">Tasks</tool-tip></a>
+    <a class="Nav-reports" href="#r" disabled><svg><use xlink:href="#REPORTS"></use></svg><tool-tip tip-position="right">Reports</tool-tip></a>
+    <a class="Nav-settings" href="#s" disabled><svg><use xlink:href="#SETTINGS"></use></svg><tool-tip tip-position="right">Settings</tool-tip></a>
+    <div class="Nav-profile"><a href="#"><img src="/image/profile.png"/><tool-tip tip-position="right">User Profile</tool-tip></a></div>
+  </nav>
+
+  <main is="regal-init"></main>
+
+  <!-- Icons -->
+  <svg style="visibility:hidden;overflow:hidden;height:0;width:0">
+    <symbol id="LOGO" viewBox="0 0.278 17.496 19.314"><path fill="CurrentColor" fill-rule="evenodd" clip-rule="evenodd" d="M 10.215 19.586 L 7.136 13.15 L 6.325 13.15 L 6.325 19.586 L 0 19.586 L 0 0.276 L 8.396 0.276 C 10.775 0.276 12.597 0.696 13.998 1.677 C 15.398 2.657 16.377 4.335 16.377 6.435 C 16.377 10.326 14.03 11.733 13.176 12.244 L 13.159 12.255 L 17.491 19.578 L 17.496 19.586 L 17.496 19.587 L 10.215 19.586 Z M 9.292 5.398 C 9.012 5.174 8.592 5.034 7.891 5.034 L 6.297 5.034 L 6.297 8.394 L 7.893 8.394 C 8.984 8.394 9.991 7.975 9.991 6.716 C 9.991 5.887 9.583 5.603 9.303 5.409 L 9.292 5.401 L 9.292 5.398 Z"/></symbol>
+    <symbol id="AGENT" viewBox="0 0 48 48"><path fill="CurrentColor" d="M24.1 46v-3H39v-2.7h-7.4V25.5H39v-3.4q0-6.2-4.35-10.675Q30.3 6.95 24.1 6.95q-6.2 0-10.65 4.475T9 22.1v3.4h7.4v14.8H9q-1.2 0-2.1-.9-.9-.9-.9-2.1V22.1q0-3.75 1.425-7.05T11.3 9.275q2.45-2.475 5.75-3.9 3.3-1.425 7.05-1.425t7.025 1.425Q34.4 6.8 36.8 9.275q2.4 2.475 3.8 5.775 1.4 3.3 1.4 7.05V43q0 1.2-.9 2.1-.9.9-2.1.9ZM9 37.3h4.4v-8.8H9v8.8Zm25.6 0H39v-8.8h-4.4Zm4.4 0h-4.4H39Zm-25.6 0H9h4.4Z"/></symbol>
+    <symbol id="TASKS" viewBox="0 0 48 48"><path fill="CurrentColor" d="M15.45 16.95q.6 0 1.05-.45.45-.45.45-1.05 0-.6-.45-1.05-.45-.45-1.05-.45-.6 0-1.05.45-.45.45-.45 1.05 0 .6.45 1.05.45.45 1.05.45Zm0 8.55q.6 0 1.05-.45.45-.45.45-1.05 0-.6-.45-1.05-.45-.45-1.05-.45-.6 0-1.05.45-.45.45-.45 1.05 0 .6.45 1.05.45.45 1.05.45Zm0 8.55q.6 0 1.05-.45.45-.45.45-1.05 0-.6-.45-1.05-.45-.45-1.05-.45-.6 0-1.05.45-.45.45-.45 1.05 0 .6.45 1.05.45.45 1.05.45ZM9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h23.1l9.9 9.9V39q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V17.55h-8.55V9H9v30ZM9 9v8.55V9v30V9Z"/></symbol>
+    <symbol id="REPORTS" viewBox="0 0 48 48"><path fill="CurrentColor" d="M4.45 35.55 2 33.75l9.4-15 6 7 7.95-12.9 5.45 8.1q-.8.1-1.55.325t-1.5.525l-2.25-3.45-7.65 12.45-6.05-7.05ZM43.85 46l-6.7-6.7q-1.05.75-2.275 1.15-1.225.4-2.525.4-3.55 0-6.025-2.475Q23.85 35.9 23.85 32.35q0-3.55 2.475-6.025Q28.8 23.85 32.35 23.85q3.55 0 6.025 2.475Q40.85 28.8 40.85 32.35q0 1.3-.425 2.525Q40 36.1 39.3 37.2l6.7 6.65Zm-11.5-8.15q2.3 0 3.9-1.6t1.6-3.9q0-2.3-1.6-3.9t-3.9-1.6q-2.3 0-3.9 1.6t-1.6 3.9q0 2.3 1.6 3.9t3.9 1.6Zm3.7-16.4q-.75-.3-1.55-.4-.8-.1-1.65-.2L43.55 4 46 5.8Z"/></symbol>
+    <symbol id="SETTINGS" viewBox="0 0 48 48"><path fill="CurrentColor" d="m19.4 44-1-6.3q-.95-.35-2-.95t-1.85-1.25l-5.9 2.7L4 30l5.4-3.95q-.1-.45-.125-1.025Q9.25 24.45 9.25 24q0-.45.025-1.025T9.4 21.95L4 18l4.65-8.2 5.9 2.7q.8-.65 1.85-1.25t2-.9l1-6.35h9.2l1 6.3q.95.35 2.025.925Q32.7 11.8 33.45 12.5l5.9-2.7L44 18l-5.4 3.85q.1.5.125 1.075.025.575.025 1.075t-.025 1.05q-.025.55-.125 1.05L44 30l-4.65 8.2-5.9-2.7q-.8.65-1.825 1.275-1.025.625-2.025.925l-1 6.3ZM24 30.5q2.7 0 4.6-1.9 1.9-1.9 1.9-4.6 0-2.7-1.9-4.6-1.9-1.9-4.6-1.9-2.7 0-4.6 1.9-1.9 1.9-1.9 4.6 0 2.7 1.9 4.6 1.9 1.9 4.6 1.9Z"/></symbol>
+  </svg>
+</body>
+</html>

@@ -1,0 +1,77 @@
+.ContactsList {
+  color: #333;
+  background: rgba(256, 256, 256, 0.7);
+  border-top-left-radius: 4px;
+  min-width: 260px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "search" "content";
+  overflow: hidden;
+}
+
+.ContactsList header {
+  font-weight: 700;
+  padding: 12px;
+  font-size: 20px;
+  line-height: 20px;
+  color: #35353d;
+  border-bottom: 1px solid #e3e5eb;
+  grid-area: header;
+  background: #fff;
+}
+
+.ContactsList > section {
+  grid-area: content;
+  overflow: auto;
+}
+
+.ContactsList-more {
+  display: inline-block;
+  text-align: center;
+  background-color: #ffffff;
+  color: #4c68c9;
+  border: 0;
+  padding: 14px;
+  cursor: pointer;
+  width: 100%;
+  text-shadow: #000;
+}
+
+.ContactsList-contact {
+  border-top: 1px solid #e3e5eb;
+  border-left: 6px solid #c0c0c0;
+  padding: 4px 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ContactsList-contact:hover {
+  background-color: #e2eeff;
+  cursor: pointer;
+}
+
+.ContactsList-contact:last-of-type {
+  border-bottom: 1px solid #e3e5eb;
+}
+
+.ContactsList-contact > svg {
+  background: #f4f3fa;
+  border: 3px solid #f4f3fa;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.ContactsList-contact span {
+  padding: 6px;
+}
+
+.ContactsList-contact span b {
+  font-size: 14px;
+  line-height: 14px;
+  display: block;
+}

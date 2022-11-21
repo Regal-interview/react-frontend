@@ -1,0 +1,183 @@
+.CallPanel {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px 8px 2px 2px;
+  background: #fff;
+  width: 450px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  align-self: center;
+  justify-content: center;
+}
+
+.CallPanel:has(> aside:hover) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.CallPanel:has(> aside:active) {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/*.CallPanel:hover {*/
+/*  padding-top: 16px;*/
+/*}*/
+
+/*.CallPanel:hover > header {*/
+/*  border-radius: 0;*/
+/*}*/
+
+/*.CallPanel:hover > aside {*/
+/*  height: 16px;*/
+/*  margin-top: -16px;*/
+/*}*/
+
+.CallPanel > aside {
+  background: rgba(224, 224, 224, 0.9);
+  cursor: grab;
+  height: 0;
+  border-radius: 5px 5px 0 0;
+}
+
+.CallPanel > aside:active {
+  cursor: grabbing;
+}
+
+.CallPanel > header {
+  background: #f4f3fa;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 5px 5px 0 0;
+}
+
+.CallPanel > header > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.CallPanel .TaskInfo > em {
+  text-decoration: underline;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.TaskInfo-recording:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ca3131;
+  margin-right: 4px;
+  margin-bottom: 2px;
+
+  box-shadow: 0 0 0 0 rgba(202, 49, 49, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+.CallPanel .BrandInfo {
+  text-align: right;
+}
+
+.CallPanel em {
+  color: #404048;
+  font-style: normal;
+  line-height: 20px;
+}
+
+.CallPanel i {
+  color: #686872;
+  font-style: normal;
+}
+
+.CallControls {
+  padding: 0 12px 12px 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.CallControls > button {
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e3e5eb;
+  background: #ffffff;
+  transition: box-shadow 200ms ease-in, border 200ms ease-in;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.CallControls > button > svg {
+  width: 18px;
+  height: 18px;
+}
+
+.CallControls > button:hover {
+  border: 1px solid #24044e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.CallControls > button.CallControls-reject {
+  background: #4a387d;
+  color: #ffffff;
+  fill: #f0f0f0;
+}
+
+.CallControls > button.CallControls-reject:hover {
+  background: #24044e;
+}
+
+.CallInfo {
+  margin: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.CallInfo-user {
+  display: flex;
+  height: 40px;
+  background: #f4f3fa;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.CallInfo-user > svg {
+  width: 40px;
+  height: 30px;
+  color: #4a387d;
+}
+
+.CallInfo-info {
+  margin: 0 8px;
+  font-size: 14px;
+  line-height: 22px;
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  color: #686872;
+}
+
+.CallInfo-info > em {
+  color: #000000;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CallInfo-status {
+  font-size: 12px;
+  line-height: 14px;
+  color: #686872;
+}

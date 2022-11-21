@@ -1,0 +1,67 @@
+@layer tooltip {
+  tool-tip {
+    --_p-inline: 12px;
+    --_p-block: 0.75ch;
+    --_triangle-size: 7px;
+
+    pointer-events: none;
+    user-select: none;
+
+    opacity: 0;
+    transform: translateX(0) translateY(var(--_y, 0));
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    position: absolute;
+    z-index: 1;
+    inline-size: max-content;
+    max-inline-size: 25ch;
+    text-align: start;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: initial;
+    padding: var(--_p-block) var(--_p-inline);
+    margin: 0;
+    border-radius: 5px;
+    background: hsl(0 0% 20%);
+    color: #fff;
+    will-change: filter;
+    filter: drop-shadow(0 3px 3px hsl(0 0% 0% / 20%)) drop-shadow(0 12px 12px hsl(0 0% 0% / 20%));
+  }
+
+  :has(> tool-tip) {
+    position: relative;
+  }
+
+  :has(> tool-tip):is(:hover, :focus-visible, :active) > tool-tip {
+    transition-delay: 300ms;
+    opacity: 1;
+  }
+
+  tool-tip::after {
+    content: "";
+    background: hsl(0 0% 20%);
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    -webkit-mask: var(--_tip);
+    mask: var(--_tip);
+  }
+
+  tool-tip:is([tip-position="right"], [tip-position="inline-end"]) {
+    inset-inline-start: calc(100% + var(--_p-inline) + var(--_triangle-size));
+    inset-block-end: 50%;
+    --_y: 50%;
+  }
+
+  tool-tip:is([tip-position="right"], [tip-position="inline-end"])::after {
+    --_tip: conic-gradient(
+        from 60deg at left,
+        rgba(0, 0, 0, 0),
+        #000 1deg 60deg,
+        rgba(0, 0, 0, 0) 61deg
+      )
+      left / 50% 100% no-repeat;
+    inset-inline-start: calc(var(--_triangle-size) * -1);
+    border-inline-start: var(--_triangle-size) solid transparent;
+  }
+}

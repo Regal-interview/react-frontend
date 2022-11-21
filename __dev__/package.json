@@ -1,0 +1,10 @@
+{
+  "name": "regal-interview-dev",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "peerDependencies": {
+    "esbuild": "^0.15.14"
+  }
+}

@@ -1,0 +1,123 @@
+.Nav {
+  color: #f0f0f0;
+  padding: 8px 0 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Nav a {
+  color: #e0e0e0;
+  display: block;
+  padding: 8px 10px 8px 8px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  cursor: pointer;
+  transition: background 100ms ease-in, color 100ms ease-in;
+  border-right: 2px transparent solid;
+  border-radius: 3px 0 0 3px;
+}
+
+.Nav a[aria-selected] {
+  background: rgba(256, 256, 256, 0.1);
+  border-color: rgba(96, 180, 227, 0.7);
+  color: #f0f0f0;
+}
+
+.Nav a:hover {
+  color: #ffffff;
+  background: rgba(256, 256, 256, 0.3);
+  border-color: rgba(96, 180, 227, 0.6);
+}
+
+.Nav a:hover > svg {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.Nav a:active > svg {
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6));
+}
+
+.Nav a > svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.Nav .Nav-logo {
+  margin: 0 6px 10px;
+  padding: 0;
+}
+
+.Nav .Nav-logo:hover {
+  background: unset;
+  color: unset;
+  border: 0;
+}
+
+.Nav .Nav-logo svg {
+  width: 35px;
+  height: 35px;
+}
+
+.Nav-profile {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.Nav-profile > a {
+  cursor: pointer;
+  padding: 0;
+  margin: 4px 5px;
+  width: 38px;
+  height: 38px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid #c0c0c0;
+  box-shadow: 0 0 0 0 rgba(244, 244, 244, 0.9);
+}
+
+.Nav-profile > a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  height: 10px;
+  width: 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: #999;
+  box-shadow: 0 0 0 0 rgba(25, 25, 25, 0.2);
+}
+
+html.available .Nav-profile > a::after {
+  background-color: #1bb157;
+}
+
+.Nav-profile img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.Nav-settings svg {
+  animation: spin infinite 5s linear;
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Nav-settings:focus svg,
+  .Nav-settings:hover svg {
+    animation-play-state: running;
+  }
+
+  .Nav-agent:hover svg {
+    animation: bounce 0.5s linear;
+  }
+}

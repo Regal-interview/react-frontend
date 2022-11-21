@@ -1,0 +1,9 @@
+/*.log
+/*.log*
+/.eslintcache
+/lib
+/coverage
+/tmp
+
+node_modules
+/public/a

@@ -1,0 +1,40 @@
+.MicButton {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 0.875rem;
+  cursor: pointer;
+  align-self: center;
+  transition: color 100ms ease-in, background-color 100ms ease-in;
+
+  color: #f0f0f0;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+
+  background-color: #4a387d;
+  border-color: #4a387d;
+  border-radius: 30px;
+}
+
+.MicButton:hover {
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
+
+  background-color: #24044e;
+  border-color: #24044e;
+}
+
+.MicButton > svg {
+  fill: #fff;
+  width: 30px;
+  height: 30px;
+}
+
+.MicButton > input {
+  border: 0;
+  margin: 0;
+  background: transparent;
+}

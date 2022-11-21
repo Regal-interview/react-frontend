@@ -1,0 +1,27 @@
+.ContactsSearch {
+  grid-area: search;
+  padding: 8px 4px 8px 4px;
+  background: #fff;
+}
+
+.ContactsSearch label {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding: 3px;
+  font-size: 16px;
+  align-items: center;
+}
+
+.ContactsSearch input {
+  background: inherit;
+  font: inherit;
+  border: 0;
+  outline: 0;
+}
+
+.ContactsSearch svg {
+  width: 18px;
+  height: 18px;
+}
