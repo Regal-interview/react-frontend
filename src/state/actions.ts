@@ -2,31 +2,36 @@ import { Dispatch } from "react";
 import { fetchContacts } from "../services/api";
 import { Contact } from "../types";
 
-import { CALL_CONTACT, CALL_HANGUP, API_REQUEST_CONTACTS, API_RECEIVED_CONTACTS } from "./types";
+import {
+  CALL_CONTACT,
+  CALL_HANGUP,
+  API_START_LOADING_CONTACTS,
+  API_RECEIVED_CONTACTS,
+} from "./types";
 
 export type ActionTypes =
-  | ReturnType<typeof loadContacts>
+  | ReturnType<typeof startLoadingContacts>
   | ReturnType<typeof receivedContacts>
   | ReturnType<typeof callContact>
   | ReturnType<typeof hangupCall>;
 
-export const loadContacts = (filter: string, refresh: boolean, nextCursor: string = "") =>
-  ({ type: API_REQUEST_CONTACTS, filter, refresh, nextCursor } as const);
+const startLoadingContacts = (filter: string, nextCursor: string = "") =>
+  ({ type: API_START_LOADING_CONTACTS, filter, nextCursor } as const);
 
-const receivedContacts = (refresh: boolean, contacts: Contact[], nextCursor?: string) =>
-  ({ type: API_RECEIVED_CONTACTS, refresh, contacts, nextCursor } as const);
+const receivedContacts = (loadMoreContacts: boolean, contacts: Contact[], nextCursor?: string) =>
+  ({ type: API_RECEIVED_CONTACTS, loadMoreContacts, contacts, nextCursor } as const);
 
 export const requestContacts = (
   dispatch: Dispatch<ActionTypes>,
   filter: string = "",
   nextCursor: string = ""
 ) => {
-  const refresh = nextCursor === "";
+  dispatch(startLoadingContacts(filter, nextCursor));
 
-  dispatch(loadContacts(filter, refresh, nextCursor));
+  const loadMoreContacts = nextCursor !== "";
 
-  fetchContacts(filter, 50, nextCursor).then(({ contacts, nextCursor }) => {
-    dispatch(receivedContacts(refresh, contacts, nextCursor));
+  fetchContacts(filter, 25, nextCursor).then(({ contacts, nextCursor }) => {
+    dispatch(receivedContacts(loadMoreContacts, contacts, nextCursor));
   });
 };
 

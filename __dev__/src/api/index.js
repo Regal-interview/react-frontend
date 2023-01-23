@@ -55,6 +55,11 @@ export function getCustomers(request, response) {
     "Cache-Control": "max-age=0, must-revalidate, private",
   });
 
+  let slowAPI = false;
+  if (filter.length > 0 && filter.length <= 2) {
+    slowAPI = !(c && c.length > 0);
+  }
+
   setTimeout(
     () => {
       response.end(
@@ -65,6 +70,6 @@ export function getCustomers(request, response) {
         encoding
       );
     },
-    filter.length === 2 ? 1000 : 40
+    slowAPI ? 1000 : 40
   );
 }

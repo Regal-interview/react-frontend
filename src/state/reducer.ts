@@ -1,14 +1,21 @@
 import { ActionTypes, State } from "./index";
-import { API_REQUEST_CONTACTS, API_RECEIVED_CONTACTS, CALL_CONTACT, CALL_HANGUP } from "./types";
+import {
+  API_START_LOADING_CONTACTS,
+  API_RECEIVED_CONTACTS,
+  CALL_CONTACT,
+  CALL_HANGUP,
+} from "./types";
 
 export default function reducer(state: State, action: ActionTypes): State {
   switch (action.type) {
     // API Interactions for contacts
-    case API_REQUEST_CONTACTS:
+    case API_START_LOADING_CONTACTS:
       return { ...state, loading: true };
 
     case API_RECEIVED_CONTACTS:
-      const contacts = action.refresh ? action.contacts : [...state.contacts, ...action.contacts];
+      const contacts = action.loadMoreContacts
+        ? [...state.contacts, ...action.contacts]
+        : action.contacts;
       return { ...state, loading: false, contacts, nextCursor: action.nextCursor };
 
     // Calling interactions

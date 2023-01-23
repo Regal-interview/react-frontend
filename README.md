@@ -2,27 +2,27 @@
 
 - [ ] ✨ Authorize Microphone
 - [ ] 🐛 Fix Contacts Filtering
-- [ ] ♻️ Discuss Improvements
+- [ ] 🔄️ Discuss Improvements
 
 ## ✨ Authorize Microphone
 
 Before voice calls can be made we must first request permission to access the browsers' microphone.
 
-Please implement this logic in the `requestMicPermission` function in the `context/MicPermission.tsx`.
+Part of the code is already implemented in the `src/context/MicPermission.tsx`, which currently
+detects if the user has given permission, and will dynamically update if it changes.
 
-Note that the code already detects if the user has given permission, and will dynamically update
-if its permission changes.
+## 🐛 Contacts Filtering Issues
 
-## 🐛 Fix Contacts Filtering
+Users have reported a problem searching their contacts.
 
-Users are reporting issues when searching their contacts list. It seems as if some API
-queries take longer than others, and old results sometimes override newer results.
-
-Example search: `jack`
+When typing a name quickly into the search box, some API queries take longer than others. This
+results in old API results, sometimes replacing newer contact search results.
 
 Update the frontend to allow for slow API calls.
 
-## ♻️ Discuss Improvements
+**EXAMPLE SEARCH:** `jack`
+
+## 🔄️ Discuss Improvements
 
 - If you had to improve the code, what would you look to change?
 - If you had to optimize the code, what tools and tricks would you use?
